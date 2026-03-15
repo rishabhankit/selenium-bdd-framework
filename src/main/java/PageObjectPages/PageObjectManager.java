@@ -11,9 +11,14 @@ public class PageObjectManager {
         this.driver=driver;
     }
 
-    public IRCTC getIRCTC()
+    public SwagLabsLoginDashboard getSwagLabsLoginDashboard()
     {
-        return new IRCTC(driver);
+        return new SwagLabsLoginDashboard(driver);
+    }
+
+    public SwagLabsHomePage getSwagLabsHomePage()
+    {
+        return new SwagLabsHomePage(driver);
     }
 
 

@@ -32,12 +32,11 @@ public class Hooks {
     @Before
     public void launchPage(Scenario scenario)
     {
-        StepTracker.stepName.set("Given user launches IRCTC website");
+        StepTracker.stepName.set("Given user launches SwagLabs website");
         driver=textContext.driver;
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.get("https://www.irctc.co.in/nget/train-search");
-        if(!textContext.pageObjectManager.getIRCTC().getOkButton().isEmpty())
-            textContext.pageObjectManager.getIRCTC().getOkButton().get(0).click();
+        driver.get("https://www.saucedemo.com/");
+
         WordReportUtil.createWordFile(scenario.getName());
 
     }
