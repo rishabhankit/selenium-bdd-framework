@@ -1,6 +1,6 @@
 package PageObjectPages;
 
-import com.sun.org.apache.xpath.internal.res.XPATHErrorResources;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,6 +20,9 @@ public class SwagLabsHomePage {
     @FindBy(xpath="//span[text()='Products']")
     private List<WebElement> productLabel;
 
+    @FindBy(xpath="//div[@class='inventory_item_name ']")
+    private List<WebElement> productNames;
+
     public void verifyHomePage()
     {
         Assert.assertFalse(productLabel.isEmpty());
@@ -27,4 +30,13 @@ public class SwagLabsHomePage {
     }
 
 
+    public void getAllProductNames() {
+
+        Helper.log(">> Product Names:");
+        for (WebElement product : productNames) {
+            Helper.log("   - " + product.getText());
+        }
+
+
+    }
 }

@@ -48,5 +48,13 @@ public class Login {
 
 
     }
+
+    @And("I get all product names")
+    public void iGetAllProductNames() {
+
+        StepTracker.stepName.set("And I get all product names");
+        this.swagLabsHomePage.getAllProductNames();
+
+    }
 }
 

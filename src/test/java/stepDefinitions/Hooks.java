@@ -16,7 +16,6 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 import java.io.IOException;
-import java.time.Duration;
 
 public class Hooks {
 
@@ -34,7 +33,6 @@ public class Hooks {
     {
         StepTracker.stepName.set("Given user launches SwagLabs website");
         driver=textContext.driver;
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get("https://www.saucedemo.com/");
 
         WordReportUtil.createWordFile(scenario.getName());
